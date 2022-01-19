@@ -1,15 +1,14 @@
 #!/bin/bash
 
-docker pull ghcr.io/linuxserver/mariadb
+docker pull lscr.io/linuxserver/mariadb
 docker run -d \
  --restart=always \
  --name mariadb \
  -h mariadb \
  -e PUID=1001 \
  -e PGID=1001 \
- -e TZ=Europe/Nicosia \
- -e MYSQL_ROOT_PASSWORD=kfl6v9aJ \
+ -e MYSQL_ROOT_PASSWORD=$dbpass \
  --net=network \
  -p 3306:3306 \
  -v mariadb:/config \
- ghcr.io/linuxserver/mariadb
+ lscr.io/linuxserver/mariadb
