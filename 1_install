@@ -8,3 +8,6 @@ read -p "press enter to continue"
 
 echo Domain Name: ; read domainname ; export domainname
 echo Email Address: ; read emailaddress ; export emailaddress
+
+echo update
+bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/2_install_updates)
