@@ -28,6 +28,9 @@ sed -i "s/\$dbpass/$dbpass/g" /tmp/mariadb
 chmod +x /tmp/mariadb
 /tmp/mariadb
 
+echo install phpmyadmin
+bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/7_install_phpmyadmin)
+
 echo install swag
 wget -q https://raw.githubusercontent.com/aristosv/webserver/main/7_install_swag --output-document="/tmp/swag"
 sed -i "s/\$domainname/$domainname/g" /tmp/swag
