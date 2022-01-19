@@ -11,3 +11,15 @@ echo Email Address: ; read emailaddress ; export emailaddress
 
 echo update
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/2_install_updates)
+
+echo install prerequisites
+bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/3_install_prerequisites)
+
+echo install docker
+bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/4_install_docker)
+
+echo install portainer
+bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/5_install_portainer)
+
+echo update
+bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/2_install_updates)
