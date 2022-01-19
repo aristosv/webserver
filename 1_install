@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo ==========================================================================================
+echo - Open ports 80 and 443 on your firewall. They are needed for certificate creation
+echo - Create an A record for you domain and point it to the WAN IP of this server
+echo ==========================================================================================
+read -p "press enter to continue"
+
+echo Domain Name: ; read domainname ; export domainname
+echo Email Address: ; read emailaddress ; export emailaddress
