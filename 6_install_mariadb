@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo installing mariadb
-docker pull lscr.io/linuxserver/mariadb
+docker pull lscr.io/linuxserver/mariadb > /dev/null 2>&1
 docker run -d \
  --restart=always \
  --name mariadb \
@@ -12,4 +12,4 @@ docker run -d \
  --net=network \
  -p 3306:3306 \
  -v mariadb:/config \
- lscr.io/linuxserver/mariadb
+ lscr.io/linuxserver/mariadb > /dev/null 2>&1
