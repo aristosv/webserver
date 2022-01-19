@@ -1,6 +1,6 @@
 #!/bin/bash
 
-docker pull ghcr.io/linuxserver/phpmyadmin
+docker pull ghcr.io/linuxserver/phpmyadmin > /dev/null 2>&1
 docker run -d \
  --restart=always \
  --name phpmyadmin \
@@ -11,4 +11,4 @@ docker run -d \
  --net=network \
  -p 8082:80 \
  -v phpmyadmin:/config \
- ghcr.io/linuxserver/phpmyadmin
+ ghcr.io/linuxserver/phpmyadmin > /dev/null 2>&1
