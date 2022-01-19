@@ -22,4 +22,8 @@ echo install portainer
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/5_install_portainer)
 
 echo install swag
-wget -q https://raw.githubusercontent.com/aristosv/webserver/main/6_install_swag --output-document="/root/swag"
+wget -q https://raw.githubusercontent.com/aristosv/webserver/main/6_install_swag --output-document="/tmp/swag"
+sed -i "s/\$domainname/$domainname/g" /tmp/swag
+sed -i "s/\$emailaddress/$emailaddress/g" /tmp/swag
+chmod +x /tmp/swag
+/tmp/swag
