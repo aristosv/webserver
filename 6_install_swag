@@ -1,6 +1,6 @@
 #!/bin/bash
 
-docker pull lscr.io/linuxserver/swag
+docker pull lscr.io/linuxserver/swag > /dev/null 2>&1
 docker run -d \
  --restart always \
  --name=swag \
@@ -17,4 +17,4 @@ docker run -d \
  -e VALIDATION=http \
  -e EMAIL=$emailaddress \
  -v swag:/config \
- lscr.io/linuxserver/swag
+ lscr.io/linuxserver/swag > /dev/null 2>&1
