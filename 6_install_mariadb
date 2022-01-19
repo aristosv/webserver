@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo installing mariadb
 docker pull lscr.io/linuxserver/mariadb
 docker run -d \
  --restart=always \
