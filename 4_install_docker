@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo installing docker
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh > /dev/null 2>&1
+
+echo creating containers user
+adduser --disabled-password --gecos '' containers > /dev/null 2>&1
+
+echo changing containers user password
+echo containers:containers | chpasswd
+
+echo adding containers user to containers group
+usermod -aG docker containers
+
+echo creating new bridge network
+docker network create -d bridge network > /dev/null 2>&1
