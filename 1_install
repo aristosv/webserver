@@ -8,6 +8,7 @@ read -p "press enter to continue"
 
 echo Domain Name: ; read domainname ; export domainname
 echo Email Address: ; read emailaddress ; export emailaddress
+echo MariaDB root Pass: ; read dbpass ; export dbpass
 
 echo update
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/2_install_updates)
@@ -21,8 +22,14 @@ bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristo
 echo install portainer
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/5_install_portainer)
 
+echo install mariadb
+wget -q https://raw.githubusercontent.com/aristosv/webserver/main/6_install_mariadb --output-document="/tmp/mariadb"
+sed -i "s/\$dbpass/$dbpass/g" /tmp/mariadb
+chmod +x /tmp/mariadb
+/tmp/mariadb
+
 echo install swag
-wget -q https://raw.githubusercontent.com/aristosv/webserver/main/6_install_swag --output-document="/tmp/swag"
+wget -q https://raw.githubusercontent.com/aristosv/webserver/main/7_install_swag --output-document="/tmp/swag"
 sed -i "s/\$domainname/$domainname/g" /tmp/swag
 sed -i "s/\$emailaddress/$emailaddress/g" /tmp/swag
 chmod +x /tmp/swag
