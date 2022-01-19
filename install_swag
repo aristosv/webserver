@@ -1,0 +1,20 @@
+#!/bin/bash
+
+docker pull lscr.io/linuxserver/swag
+docker run -d \
+ --restart always \
+ --name=swag \
+ -h swag \
+ --net=network \
+ -p 80:80 \
+ -p 443:443 \
+ --cap-add=NET_ADMIN \
+ -e PUID=1001 \
+ -e PGID=1001 \
+ -e TZ=Europe/Nicosia \
+ -e URL=$domainname \
+ -e SUBDOMAINS=www, \
+ -e VALIDATION=http \
+ -e EMAIL=$emailaddress \
+ -v swag:/config \
+ lscr.io/linuxserver/swag
