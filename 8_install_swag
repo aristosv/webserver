@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo installing swag
 docker pull lscr.io/linuxserver/swag > /dev/null 2>&1
 docker run -d \
  --restart always \
