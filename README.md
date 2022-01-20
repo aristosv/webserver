@@ -29,5 +29,5 @@ URL: http://your_ip_here:9000
 ```
 Name: phpMyAdmin
 Usage: database manager
-URL: http://your_ip_here:8112
+URL: http://your_ip_here:8082
 ```
