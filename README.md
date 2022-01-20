@@ -24,10 +24,10 @@ After the installation, this is how you can access the web apps:
 ```
 Name: Portainer
 Usage: container manager
-URL: http://<your_ip_here>:9000
+URL: http://your_ip_here:9000
 ```
 ```
 Name: phpMyAdmin
 Usage: database manager
-URL: http://<your_ip_here>:8112
+URL: http://your_ip_here:8112
 ```
