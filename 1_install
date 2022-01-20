@@ -10,9 +10,9 @@ echo Domain Name: ; read domainname ; export domainname
 echo Email Address: ; read emailaddress ; export emailaddress
 echo MariaDB root Password: ; read dbrootpass ; export dbrootpass
 
-dbname=$(echo $domainname | sed -e 's/\.//g')
-dbuser=$(echo $domainname | sed -e 's/\.//g')
-dbpass=$(echo $domainname | sed -e 's/\.//g')
+dbname=$(echo $domainname | sed -e 's/\.//g') ; export dbname
+dbuser=$(echo $domainname | sed -e 's/\.//g') ; export dbuser
+dbpass=$(echo $domainname | sed -e 's/\.//g') ; export dbpass
 
 echo update
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/2_install_updates)
