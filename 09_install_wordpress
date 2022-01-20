@@ -6,5 +6,8 @@ wget -q https://wordpress.org/latest.zip --output-document="/tmp/latest.zip"
 echo extracting wordpress
 unzip -qq /tmp/latest.zip -d /tmp
 
+echo emptying www directory
+rm -rf /var/lib/docker/volumes/swag/_data/www/*
+
 echo moving wordpress to www
 mv /tmp/wordpress/* /var/lib/docker/volumes/swag/_data/www
