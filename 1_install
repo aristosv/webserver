@@ -25,6 +25,7 @@ bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristo
 echo install mariadb
 wget -q https://raw.githubusercontent.com/aristosv/webserver/main/6_install_mariadb --output-document="/tmp/mariadb"
 sed -i "s/\$dbpass/$dbpass/g" /tmp/mariadb
+sed -i "s/\$domainname/$domainname/g" /tmp/mariadb
 chmod +x /tmp/mariadb
 /tmp/mariadb
 
