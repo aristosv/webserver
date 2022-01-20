@@ -15,9 +15,7 @@ docker run -d \
  lscr.io/linuxserver/mariadb > /dev/null 2>&1
 
 echo waiting for mariadb to start
-while ! docker exec mariadb mysql --user=root --password=$dbrootpass -e "SELECT 1" >/dev/null 2>&1; do
-    sleep 1
-done
+while ! docker exec mariadb mysql --user=root --password=$dbrootpass -e "SELECT 1" >/dev/null 2>&1 ; do sleep 1 ; done
 
 echo creating database $dbname
 docker exec mariadb mysql --user=root --password=$dbrootpass -e "CREATE DATABASE $dbname;"
