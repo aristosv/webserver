@@ -7,3 +7,14 @@ This will install Swag, which includes the Nginx webserver, php, a reverse proxy
 ```bash
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/01_install)
 ```
+After the installation, this is how you can access all the web apps:
+```
+Name: Portainer
+Usage: container manager
+URL: http://<your_ip_here>:9000
+```
+```
+Name: phpMyAdmin
+Usage: database manager
+URL: http://<your_ip_here>:8112
+```
