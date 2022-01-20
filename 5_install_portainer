@@ -8,6 +8,7 @@ docker run -d \
  -h portainer \
  -e PUID=1001 \
  -e PGID=1001 \
+ --net=network \
  -p 9000:9000 \
  -v /var/run/docker.sock:/var/run/docker.sock \
  -v portainer_data:/data \
