@@ -2,7 +2,7 @@
 
 Nginx / Reverse Proxy / PHP / MariaDB / phpMyAdmin / LetsEncrypt / Fail2Ban / Portainer
 
-This will install Swag, which includes the Nginx webserver, php, a reverse proxy, certbot for letsencrypt certificates and fail2ban. It will also install MariaDB, phpMyAdmin and Portainer for container management. You can run it as root on a fresh, minimal installation of Debian.
+This will install Swag, which includes the Nginx webserver, php, a reverse proxy, certbot for letsencrypt certificates and fail2ban. It will also install MariaDB, phpMyAdmin and Portainer for container management.
 
 Before running the script you will have to open ports 80 and 443 on your firewall, to allow http > https redirection and certificate validation. You will also have to create an A record for your domain and point it to your server IP Address.
 
@@ -12,6 +12,7 @@ Before running the script you will have to open ports 80 and 443 on your firewal
 - **Email Address:** Your email address, used for LetsEncrypt notifications.
 - **MariaDB root Password:** The root password for your MariaDB database.
 
+You can run the command below as root on a fresh, minimal installation of Debian.
 ```bash
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/01_install)
 ```
