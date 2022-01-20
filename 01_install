@@ -47,3 +47,6 @@ chmod +x /tmp/swag
 
 echo install wordpress
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/09_install_wordpress)
+
+echo install complete
+bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/10_install_complete)
