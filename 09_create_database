@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker exec -it mariadb /bin/bash -c "mysql --user='root' --password='kfl6v9aJ' --execute='CREATE DATABASE word4;'"
