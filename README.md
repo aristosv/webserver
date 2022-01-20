@@ -18,11 +18,9 @@ You can run the command below as root on a fresh, minimal installation of Debian
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/01_install)
 ```
 ---
-The script will install Docker, all the containers, create a new database and download WordPress.
-
-After the installation you can visit your domain and setup WordPress
-
-This is how you can access the web apps:
+- The script will install Docker, all the containers, create a new database and download WordPress.
+- After the installation you can visit your domain and setup WordPress
+- This is how you can access the web apps:
 ```
 Name: Portainer
 Usage: container manager
