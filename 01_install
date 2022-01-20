@@ -15,19 +15,19 @@ dbuser=$(echo $domainname | sed -e 's/\.//g') ; export dbuser
 dbpass=$(echo $domainname | sed -e 's/\.//g') ; export dbpass
 
 echo update
-bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/2_install_updates)
+bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/02_install_updates)
 
 echo install prerequisites
-bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/3_install_prerequisites)
+bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/03_install_prerequisites)
 
 echo install docker
-bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/4_install_docker)
+bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/04_install_docker)
 
 echo install portainer
-bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/5_install_portainer)
+bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/05_install_portainer)
 
 echo install mariadb
-wget -q https://raw.githubusercontent.com/aristosv/webserver/main/6_install_mariadb --output-document="/tmp/mariadb"
+wget -q https://raw.githubusercontent.com/aristosv/webserver/main/06_install_mariadb --output-document="/tmp/mariadb"
 sed -i "s/\$dbrootpass/$dbrootpass/g" /tmp/mariadb
 sed -i "s/\$dbname/$dbname/g" /tmp/mariadb
 sed -i "s/\$dbuser/$dbuser/g" /tmp/mariadb
@@ -36,10 +36,10 @@ chmod +x /tmp/mariadb
 /tmp/mariadb
 
 echo install phpmyadmin
-bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/7_install_phpmyadmin)
+bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/07_install_phpmyadmin)
 
 echo install swag
-wget -q https://raw.githubusercontent.com/aristosv/webserver/main/8_install_swag --output-document="/tmp/swag"
+wget -q https://raw.githubusercontent.com/aristosv/webserver/main/08_install_swag --output-document="/tmp/swag"
 sed -i "s/\$domainname/$domainname/g" /tmp/swag
 sed -i "s/\$emailaddress/$emailaddress/g" /tmp/swag
 chmod +x /tmp/swag
