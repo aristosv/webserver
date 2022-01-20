@@ -13,7 +13,7 @@ echo You can manage your database using phpMyAdmin
 echo URL: http://$(hostname -I | cut -d' ' -f1):8082
 echo Server: $(hostname -I | cut -d' ' -f1)
 echo Username: root
-echo Password: $dbpass
+echo Password: $dbrootpass
 echo ========================================================
 echo You can manage all your containers with Portainer
 echo URL: http://$(hostname -I | cut -d' ' -f1):9000
