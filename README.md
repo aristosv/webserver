@@ -24,10 +24,10 @@ bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristo
 ```
 Name: Portainer
 Usage: container manager
-URL: http://your_ip_here:9000
+URL: http://server_lan_ip:9000
 ```
 ```
 Name: phpMyAdmin
 Usage: database manager
-URL: http://your_ip_here:8082
+URL: http://server_lan_ip:8082
 ```
