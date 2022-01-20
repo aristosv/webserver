@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo installing phpmyadmin
-docker pull ghcr.io/linuxserver/phpmyadmin > /dev/null 2>&1
+docker pull lscr.io/linuxserver/phpmyadmin > /dev/null 2>&1
 docker run -d \
  --restart=always \
  --name phpmyadmin \
@@ -12,4 +12,4 @@ docker run -d \
  --net=network \
  -p 8082:80 \
  -v phpmyadmin:/config \
- ghcr.io/linuxserver/phpmyadmin > /dev/null 2>&1
+ lscr.io/linuxserver/phpmyadmin > /dev/null 2>&1
