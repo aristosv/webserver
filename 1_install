@@ -1,9 +1,9 @@
 #!/bin/bash
 
-echo ==========================================================================================
-echo - Open ports 80 and 443 on your firewall. They are needed for certificate creation
-echo - Create an A record for you domain and point it to the WAN IP of this server
-echo ==========================================================================================
+echo ==============================================================================================
+echo - Open ports 80 and 443 on your firewall. Needed for certificate creation and https redirect
+echo - Create an A record for you domain and point it to the WAN IP of this server - $(wget -qO- http://ipecho.net/plain)
+echo ==============================================================================================
 read -p "press enter to continue"
 
 echo Domain Name: ; read domainname ; export domainname
