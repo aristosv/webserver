@@ -15,7 +15,7 @@ docker run -d \
  lscr.io/linuxserver/mariadb > /dev/null 2>&1
 
 echo wating for mariadb to start
-while ! curl -o - $(hostname -I | cut -d' ' -f1):3306; do sleep 1; done
+if [[ $(wget -q -t 1 --spider --dns-timeout 3 --connect-timeout 10 $(hostname -I | cut -d' ' -f1):3306; echo $?) -eq 0 ]]; then echo "OK"; else echo "FAIL"; fi
 
 echo creating database $dbname
 docker exec -it mariadb /bin/bash -c "mysql --user='root' --password='$dbrootpass' --execute='CREATE DATABASE $dbname;'"
