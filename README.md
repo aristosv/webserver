@@ -8,7 +8,7 @@ Before running the script you will have to open ports 80 and 443 on your firewal
 
 ---
 ## Required setup information
-- **Domain Name:** The name of the domain you want to host on your server, without www.
+- **Domain Name:** The name of the domain you want to host on your server. No need to enter www.
 - **Email Address:** Your email address, used for LetsEncrypt notifications
 - **MariaDB root Password:** The root password for your MariaDB database
 
