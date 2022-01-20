@@ -12,11 +12,11 @@ Before running the script you will have to open ports 80 and 443 on your firewal
 - **Email Address:** Your email address, used for LetsEncrypt notifications.
 - **MariaDB root Password:** The root password for your MariaDB database.
 ---
-
 You can run the command below as root on a fresh, minimal installation of Debian.
 ```bash
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/01_install)
 ```
+---
 After the installation, this is how you can access all the web apps:
 ```
 Name: Portainer
