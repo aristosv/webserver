@@ -21,7 +21,7 @@ echo creating database $dbname
 docker exec mariadb mysql --user=root --password=$dbrootpass -e "CREATE DATABASE $dbname;"
 
 echo creating user $dbuser
-docker exec mariadb mysql --user=root --password=$dbrootpass -e "CREATE USER '$dbuser'@localhost IDENTIFIED BY '$dbpass';"
+docker exec mariadb mysql --user=root --password=$dbrootpass -e "CREATE USER '$dbuser'@'%' IDENTIFIED BY '$dbpass';"
 
 echo assigning privileges for user $dbuser to database $dbname
 docker exec mariadb mysql --user=root --password=$dbrootpass -e "GRANT ALL ON $dbname.* TO '$dbuser'@'%' IDENTIFIED BY '$dbpass' WITH GRANT OPTION;"
