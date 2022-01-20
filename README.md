@@ -1,6 +1,6 @@
 # webserver
 
-Nginx / Reverse Proxy / PHP / MariaDB / phpMyAdmin / LetsEncrypt / Fail2Ban / Portainer
+Nginx / PHP / MariaDB / phpMyAdmin / LetsEncrypt / Fail2Ban / Portainer
 ---
 
 This will install the [Swag](https://docs.linuxserver.io/images/docker-swag) container, which includes the Nginx webserver, php, a reverse proxy, certbot for letsencrypt certificates and fail2ban. It will also install MariaDB, phpMyAdmin and Portainer for container management. Everything will be installed in a containerized environment.
