@@ -8,11 +8,20 @@ docker run -d \
  -h mariadb \
  -e PUID=1001 \
  -e PGID=1001 \
- -e MYSQL_ROOT_PASSWORD=$dbpass \
+ -e MYSQL_ROOT_PASSWORD=$dbrootpass \
  --net=network \
  -p 3306:3306 \
  -v mariadb:/config \
  lscr.io/linuxserver/mariadb > /dev/null 2>&1
 
 echo creating database $dbname
-docker exec -it mariadb /bin/bash -c "mysql --user='root' --password='$dbpass' --execute='CREATE DATABASE $dbname;'"
+docker exec -it mariadb /bin/bash -c "mysql --user='root' --password='$dbrootpass' --execute='CREATE DATABASE $dbname;'"
+
+echo creating user $domainname
+docker exec -it mariadb /bin/bash -c "mysql --user='root' --password='$dbrootpass' --execute='CREATE USER '$domainname'@'localhost' IDENTIFIED BY '$domainname';'"
+
+echo assigning privileges for user $domainname to database $dbname
+docker exec -it mariadb /bin/bash -c "mysql --user='root' --password='$dbrootpass' --execute='GRANT ALL ON $domainname.* TO '$dbname'@'localhost' IDENTIFIED BY '$domainname' WITH GRANT OPTION;'"
+
+echo flushing privileges
+docker exec -it mariadb /bin/bash -c "mysql --user='root' --password='$dbrootpass' --execute='FLUSH PRIVILEGES;'"
