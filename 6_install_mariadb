@@ -20,13 +20,13 @@ while ! docker exec mariadb mysql --user=root --password=$dbrootpass -e "SELECT 
 done
 
 echo creating database $dbname
-docker exec -it mariadb /bin/bash -c "mysql --user='root' --password='$dbrootpass' --execute='CREATE DATABASE $dbname;'"
+docker exec mariadb mysql --user=root --password=$dbrootpass -e "CREATE DATABASE $dbname;"
 
 echo creating user $dbuser
-docker exec -it mariadb /bin/bash -c "mysql --user='root' --password='$dbrootpass' --execute='CREATE USER '$dbuser'@'localhost' IDENTIFIED BY '$dbpass';'"
+docker exec mariadb mysql --user=root --password=$dbrootpass -e "CREATE USER '$dbuser'@localhost IDENTIFIED BY '$dbpass';"
 
 echo assigning privileges for user $dbuser to database $dbname
-docker exec -it mariadb /bin/bash -c "mysql --user='root' --password='$dbrootpass' --execute='GRANT ALL ON $dbname.* TO '$dbuser'@'localhost' IDENTIFIED BY '$dbpass' WITH GRANT OPTION;'"
+docker exec mariadb mysql --user=root --password=$dbrootpass -e "GRANT ALL ON $dbname.* TO '$dbuser'@localhost IDENTIFIED BY '$dbpass' WITH GRANT OPTION;"
 
 echo flushing privileges
-docker exec -it mariadb /bin/bash -c "mysql --user='root' --password='$dbrootpass' --execute='FLUSH PRIVILEGES;'"
+docker exec mariadb mysql --user=root --password=$dbrootpass -e "FLUSH PRIVILEGES;"
