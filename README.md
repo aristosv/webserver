@@ -20,7 +20,7 @@ bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristo
 ---
 - The script will install Docker, all the containers, create a new database and download WordPress.
 - After the installation you can visit your domain and setup WordPress.
-- You can also manage the containers and the database with the below.
+- You can also manage the containers and the database with the tools below.
 ```
 Name: Portainer
 Usage: container manager
