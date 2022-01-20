@@ -13,3 +13,6 @@ docker run -d \
  -p 3306:3306 \
  -v mariadb:/config \
  lscr.io/linuxserver/mariadb > /dev/null 2>&1
+
+echo creating database $dbname
+docker exec -it mariadb /bin/bash -c "mysql --user='root' --password='$dbpass' --execute='CREATE DATABASE $dbname;'"
