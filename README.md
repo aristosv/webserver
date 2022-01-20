@@ -11,6 +11,7 @@ Before running the script you will have to open ports 80 and 443 on your firewal
 - **Domain Name:** The name of the domain you want to host on your server.
 - **Email Address:** Your email address, used for LetsEncrypt notifications.
 - **MariaDB root Password:** The root password for your MariaDB database.
+---
 
 You can run the command below as root on a fresh, minimal installation of Debian.
 ```bash
