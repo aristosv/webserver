@@ -1,4 +1,4 @@
 #!/bin/bash
 
 echo installing prerequisites
-apt install -y curl unzip > /dev/null 2>&1
+apt install -y curl unzip dnsutils > /dev/null 2>&1
