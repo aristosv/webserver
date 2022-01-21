@@ -9,6 +9,9 @@ unzip -qq /tmp/latest.zip -d /tmp
 echo moving wordpress to $domainname
 mv /tmp/wordpress/* /var/lib/docker/volumes/swag/_data/www/$domainname/html
 
+echo setting permissions
+chown -R containers:containers /var/lib/docker/volumes/swag/_data/www/$domainname
+
 echo cleaning up
 rm /tmp/latest.zip
 rmdir /tmp/wordpress
