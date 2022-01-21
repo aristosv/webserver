@@ -15,7 +15,7 @@ if [[ $(dig $domainname +short) = $(wget -qO- http://ipecho.net/plain) ]]
 then
  echo $domainname A record matches this server ip. setup will continue.
 else
- echo $domainname A record does not match this server IP. setup is cancelled.
+ echo $domainname A record does not match this server ip. setup is cancelled.
  exit 1
 fi
 
