@@ -57,7 +57,7 @@ sed -i "s/\$domainname/$domainname/g" /tmp/swag
 sed -i "s/\$emailaddress/$emailaddress/g" /tmp/swag
 chmod +x /tmp/swag
 /tmp/swag
-#rm /tmp/swag
+rm /tmp/swag
 
 echo install wordpress
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/09_install_wordpress)
