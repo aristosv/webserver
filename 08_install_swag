@@ -20,7 +20,7 @@ docker run -d \
  lscr.io/linuxserver/swag > /dev/null 2>&1
  
 echo waiting for swag to start
-until $(curl --output /dev/null --silent --head --fail https://$(hostname -I | cut -d' ' -f1)) ; do sleep 1 ; done
+until $(curl --output /dev/null --silent --head --fail http://$(hostname -I | cut -d' ' -f1)) ; do sleep 1 ; done
 
 echo creating $domainname configuration
 cp /var/lib/docker/volumes/swag/_data/nginx/site-confs/default /var/lib/docker/volumes/swag/_data/nginx/site-confs/$domainname
