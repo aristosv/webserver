@@ -34,6 +34,7 @@ sed -i "s/\$dbuser/$dbuser/g" /tmp/mariadb
 sed -i "s/\$dbpass/$dbpass/g" /tmp/mariadb
 chmod +x /tmp/mariadb
 /tmp/mariadb
+rm /tmp/mariadb
 
 echo install phpmyadmin
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/07_install_phpmyadmin)
@@ -44,6 +45,7 @@ sed -i "s/\$domainname/$domainname/g" /tmp/swag
 sed -i "s/\$emailaddress/$emailaddress/g" /tmp/swag
 chmod +x /tmp/swag
 /tmp/swag
+rm /tmp/swag
 
 echo install wordpress
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/09_install_wordpress)
