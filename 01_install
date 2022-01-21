@@ -13,9 +13,9 @@ echo Domain Name: ; read domainname ; export domainname
 
 if [[ $(dig $domainname +short) = $(wget -qO- http://ipecho.net/plain) ]]
 then
- echo $domainname A record matches this server IP
+ echo $domainname A record matches this server ip. setup will continue.
 else
- echo ERROR! $domainname A record does not match this server IP
+ echo $domainname A record does not match this server IP. setup is cancelled.
  exit 1
 fi
 
