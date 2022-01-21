@@ -1,6 +1,31 @@
 #!/bin/bash
 
+echo updating repositories
+apt update > /dev/null 2>&1
+
+echo upgrading system
+apt -y upgrade > /dev/null 2>&1
+
+echo updating portainer
+docker stop portainer_data
+docker rmi -f portainer/portainer-ce
+docker pull portainer/portainer-ce
+docker start portainer-ce
+
+echo updating mariadb
+docker stop mariadb
+docker rmi -f lscr.io/linuxserver/mariadb
+docker pull lscr.io/linuxserver/mariadb
+docker start mariadb
+
+echo updating phpmyadmin
 docker stop phpmyadmin
 docker rmi -f lscr.io/linuxserver/phpmyadmin
 docker pull lscr.io/linuxserver/phpmyadmin
 docker start phpmyadmin
+
+echo updating swag
+docker stop swag
+docker rmi -f lscr.io/linuxserver/swag
+docker pull lscr.io/linuxserver/swag
+docker start swag
