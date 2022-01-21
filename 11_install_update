@@ -7,25 +7,41 @@ echo upgrading system
 apt -y upgrade > /dev/null 2>&1
 
 echo updating portainer
+echo stopping portainer
 docker stop portainer_data > /dev/null 2>&1
+echo removing current portainer image
 docker rmi -f portainer/portainer-ce > /dev/null 2>&1
+echo pulling latest portainer image
 docker pull portainer/portainer-ce > /dev/null 2>&1
+echo starting portainer
 docker start portainer-ce > /dev/null 2>&1
 
 echo updating mariadb
+echo stopping mariadb
 docker stop mariadb > /dev/null 2>&1
+echo removing current mariadb image
 docker rmi -f lscr.io/linuxserver/mariadb > /dev/null 2>&1
+echo pulling latest mariadb image
 docker pull lscr.io/linuxserver/mariadb > /dev/null 2>&1
+echo starting mariadb
 docker start mariadb > /dev/null 2>&1
 
 echo updating phpmyadmin
+echo stopping phpmyadmin
 docker stop phpmyadmin > /dev/null 2>&1
+echo removing current phpmyadmin image
 docker rmi -f lscr.io/linuxserver/phpmyadmin > /dev/null 2>&1
+echo pulling latest phpmyadmin image
 docker pull lscr.io/linuxserver/phpmyadmin > /dev/null 2>&1
+echo starting phpmyadmin
 docker start phpmyadmin > /dev/null 2>&1
 
 echo updating swag
+echo stopping swag
 docker stop swag > /dev/null 2>&1
+echo removing current swag image
 docker rmi -f lscr.io/linuxserver/swag > /dev/null 2>&1
+echo pulling latest swag image
 docker pull lscr.io/linuxserver/swag > /dev/null 2>&1
+echo starting swag
 docker start swag > /dev/null 2>&1
