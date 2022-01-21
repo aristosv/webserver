@@ -18,6 +18,11 @@ You can run the command below as root on a fresh, minimal installation of Debian
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/01_install)
 ```
 ---
+To update your system and all the containers you can run the following command
+```bash
+bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/11_install_update)
+```
+---
 - The script will install Docker, all the containers, create a new database and download WordPress.
 - After the installation you can visit your domain and setup WordPress.
 - You can also manage the containers and the database with the tools below.
