@@ -7,7 +7,7 @@ echo ===========================================================================
 read -p "press enter to continue"
 
 echo getting ready
-apt install -y dnsutils
+apt install -y dnsutils > /dev/null 2>&1
 
 echo Domain Name: ; read domainname ; export domainname
 
@@ -15,7 +15,7 @@ if [[ $(dig $domainname +short) = $(wget -qO- http://ipecho.net/plain) ]]
 then
  echo $domainname A record matches this server IP
 else
- echo $domainname A record does not match this server IP
+ echo ERROR! $domainname A record does not match this server IP
  exit 1
 fi
 
