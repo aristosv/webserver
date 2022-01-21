@@ -24,13 +24,10 @@ cp /var/lib/docker/volumes/swag/_data/nginx/site-confs/default /var/lib/docker/v
 
 echo modifying $domainname configuration
 sed -i -e "s| default_server||g" /var/lib/docker/volumes/swag/_data/nginx/site-confs/$domainname
-
 sed -i -e "s|cache/|cache/$domainname|g" /var/lib/docker/volumes/swag/_data/nginx/site-confs/$domainname
 sed -i -e "s|auth_cache|auth_cache_$domainname|g" /var/lib/docker/volumes/swag/_data/nginx/site-confs/$domainname
-
 sed -i -e "s|/config/www|/config/www/$domainname/html|g" /var/lib/docker/volumes/swag/_data/nginx/site-confs/$domainname
 sed -i -e "s|server_name _|server_name $domainname www.$domainname|g" /var/lib/docker/volumes/swag/_data/nginx/site-confs/$domainname
-
 sed -i -e "s|cache/|cache/$domainname|g" /var/lib/docker/volumes/swag/_data/nginx/site-confs/$domainname
 sed -i -e "s|auth_cache_|auth_cache_$domainname|g" /var/lib/docker/volumes/swag/_data/nginx/site-confs/$domainname
 
