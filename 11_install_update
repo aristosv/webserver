@@ -7,25 +7,25 @@ echo upgrading system
 apt -y upgrade > /dev/null 2>&1
 
 echo updating portainer
-docker stop portainer_data
-docker rmi -f portainer/portainer-ce
-docker pull portainer/portainer-ce
-docker start portainer-ce
+docker stop portainer_data > /dev/null 2>&1
+docker rmi -f portainer/portainer-ce > /dev/null 2>&1
+docker pull portainer/portainer-ce > /dev/null 2>&1
+docker start portainer-ce > /dev/null 2>&1
 
 echo updating mariadb
-docker stop mariadb
-docker rmi -f lscr.io/linuxserver/mariadb
-docker pull lscr.io/linuxserver/mariadb
-docker start mariadb
+docker stop mariadb > /dev/null 2>&1
+docker rmi -f lscr.io/linuxserver/mariadb > /dev/null 2>&1
+docker pull lscr.io/linuxserver/mariadb > /dev/null 2>&1
+docker start mariadb > /dev/null 2>&1
 
 echo updating phpmyadmin
-docker stop phpmyadmin
-docker rmi -f lscr.io/linuxserver/phpmyadmin
-docker pull lscr.io/linuxserver/phpmyadmin
-docker start phpmyadmin
+docker stop phpmyadmin > /dev/null 2>&1
+docker rmi -f lscr.io/linuxserver/phpmyadmin > /dev/null 2>&1
+docker pull lscr.io/linuxserver/phpmyadmin > /dev/null 2>&1
+docker start phpmyadmin > /dev/null 2>&1
 
 echo updating swag
-docker stop swag
-docker rmi -f lscr.io/linuxserver/swag
-docker pull lscr.io/linuxserver/swag
-docker start swag
+docker stop swag > /dev/null 2>&1
+docker rmi -f lscr.io/linuxserver/swag > /dev/null 2>&1
+docker pull lscr.io/linuxserver/swag > /dev/null 2>&1
+docker start swag > /dev/null 2>&1
