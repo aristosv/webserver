@@ -13,6 +13,7 @@ Before running the script you will have to open ports 80 and 443 on your firewal
 - **Email Address:** Your email address, used for LetsEncrypt notifications.
 - **MariaDB root Password:** Set the root password for your MariaDB database.
 ---
+## Install
 You can run the command below as root on a fresh, minimal installation of Debian.
 ```bash
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/01_install)
@@ -32,6 +33,7 @@ Usage: database manager
 URL: http://server_lan_ip:8082
 ```
 ---
+## Update
 To update your system and all the containers you can run the following command
 ```bash
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/11_install_update)
