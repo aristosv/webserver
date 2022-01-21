@@ -6,7 +6,19 @@ echo - Create an A record for you domain and point it to the IP of this server -
 echo ==============================================================================================
 read -p "press enter to continue"
 
+echo getting ready
+apt install -y dnsutils
+
 echo Domain Name: ; read domainname ; export domainname
+
+if [[ $(dig $domainname +short) = $(wget -qO- http://ipecho.net/plain) ]]
+then
+ echo $domainname A record matches this server IP
+else
+ echo $domainname A record does not match this server IP
+ exit 1
+fi
+
 echo Email Address: ; read emailaddress ; export emailaddress
 echo MariaDB root Password: ; read dbrootpass ; export dbrootpass
 
