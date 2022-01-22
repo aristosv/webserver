@@ -20,11 +20,11 @@ else
 fi
 
 echo Email Address: ; read emailaddress ; export emailaddress
-echo MariaDB root Password: ; read dbrootpass ; export dbrootpass
 
+dbpass=$(openssl rand -base64 16) ; export dbpass
+dbrootpass=$(openssl rand -base64 16) ; export dbrootpass
 dbname=$(echo $domainname | sed -e 's/\.//g') ; export dbname
 dbuser=$(echo $domainname | sed -e 's/\.//g') ; export dbuser
-dbpass=$(echo $domainname | sed -e 's/\.//g') ; export dbpass
 
 echo update
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/02_install_updates)
