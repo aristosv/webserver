@@ -42,3 +42,6 @@ sed -i -e "s|server_name _|server_name $domainname www.$domainname|g" /var/lib/d
 
 echo creating $domainname directory
 mkdir -p /var/lib/docker/volumes/swag/_data/www/$domainname/html
+
+echo restarting swag
+docker container restart swag
