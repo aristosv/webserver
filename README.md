@@ -5,7 +5,11 @@ Nginx / PHP / MariaDB / phpMyAdmin / LetsEncrypt / Fail2Ban / Portainer
 
 This will install the [Swag](https://docs.linuxserver.io/images/docker-swag) container, which includes the Nginx webserver, php, a reverse proxy, certbot for letsencrypt certificates and fail2ban for intrusion prevention. It will also install MariaDB, phpMyAdmin, Portainer for container management and WordPress. Everything will be installed in a containerized environment.
 
-Before running the script you will have to open ports 80 and 443 on your firewall, to allow http to https redirection and certificate validation. You will also have to create an A record for your domain and point it to your server IP Address. Setup will not continue if the A record does not match your server IP Address.
+---
+## Required actions
+- Open ports 80 and 443 on your firewall, to allow http to https redirection and certificate validation.
+- create an A record for your domain and point it to your server IP Address.
+---
 
 ---
 ## Required setup information
