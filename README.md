@@ -10,8 +10,6 @@ This will install the [Swag](https://docs.linuxserver.io/images/docker-swag) con
 - Open ports 80 and 443 on your firewall, to allow http to https redirection and certificate validation.
 - create an A record for your domain and point it to your server IP Address.
 ---
-
----
 ## Required setup information
 - **Domain Name:** The name of the domain you want to host on your server.
 - **Email Address:** Your email address, used for LetsEncrypt notifications.
