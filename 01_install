@@ -21,10 +21,10 @@ fi
 
 echo Email Address: ; read emailaddress ; export emailaddress
 
-dbpass=$(openssl rand -base64 16) ; export dbpass
-dbrootpass=$(openssl rand -base64 16) ; export dbrootpass
 dbname=$(echo $domainname | sed -e 's/\.//g') ; export dbname
 dbuser=$(echo $domainname | sed -e 's/\.//g') ; export dbuser
+dbpass=$(cat /dev/urandom | tr -dc '[:alnum:]' | head -c 16) ; export dbpass
+dbrootpass=$(cat /dev/urandom | tr -dc '[:alnum:]' | head -c 16) ; export dbrootpass
 
 echo update
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/02_install_updates)
