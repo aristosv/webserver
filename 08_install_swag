@@ -44,4 +44,4 @@ echo creating $domainname directory
 mkdir -p /var/lib/docker/volumes/swag/_data/www/$domainname/html
 
 echo restarting swag
-docker container restart swag
+docker container restart swag > /dev/null 2>&1
