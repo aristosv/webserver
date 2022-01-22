@@ -17,6 +17,7 @@ docker run -d \
  -e VALIDATION=http \
  -e EMAIL=$emailaddress \
  -e STAGING=true \
+ -e EXTRA_DOMAINS=\
  -v swag:/config \
  lscr.io/linuxserver/swag > /dev/null 2>&1
  
