@@ -15,7 +15,7 @@ This will install the [Swag](https://docs.linuxserver.io/images/docker-swag) con
 - **Email Address:** Your email address, used for LetsEncrypt notifications.
 ---
 ## Install
-You can run the command below as root on a fresh, minimal installation of Debian.
+Run the following command as root on a minimal installation of Debian.
 ```bash
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/01_install)
 ```
@@ -36,7 +36,7 @@ URL: http://server_lan_ip:8082
 ```
 ---
 ## Update
-To update your system and all the containers you can run the following command
+Run the following command to update your system and all the containers.
 ```bash
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/11_install_update)
 ```
