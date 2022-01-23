@@ -1,4 +1,4 @@
-# webserver
+# Easy Web Server
 
 Nginx / PHP / MariaDB / phpMyAdmin / LetsEncrypt / Fail2Ban / Portainer
 ---
