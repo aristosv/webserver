@@ -33,7 +33,7 @@ echo creating $domainname directory
 mkdir -p /var/lib/docker/volumes/swag/_data/www/$domainname/html
 
 echo generating certificate for $domainname
-docker exec swag certbot --nginx --non-interactive --agree-tos --staging --redirect -m $emailaddress -d $domainname -d www.$domainname
+docker exec swag certbot certonly --pre-hook "pkill -9 -ef nginx" --standalone --non-interactive --agree-tos --redirect -m $emailaddress -d $domainname -d www.$domainname --post-hook "exec /usr/sbin/nginx -c /config/nginx/nginx.conf"
 
 echo restarting swag
 docker container restart swag > /dev/null 2>&1
