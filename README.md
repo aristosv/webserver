@@ -42,7 +42,7 @@ bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristo
 ```
 ---
 ## Add Domains
-Run the following command to add an additional domain.
+Run the following command to add a new domain.
 ```bash
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/12_install_domain)
 ```
