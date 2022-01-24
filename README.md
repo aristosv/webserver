@@ -41,3 +41,9 @@ Run the following command to update your system and all the containers.
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/11_install_update)
 ```
 ---
+## Add Domains
+Run the following command to add an additional domain.
+```bash
+bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/12_install_domain)
+```
+---
