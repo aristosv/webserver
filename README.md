@@ -17,7 +17,7 @@ This will install the [Swag](https://docs.linuxserver.io/images/docker-swag) con
 ## Install
 Run the following command as root on a minimal installation of Debian.
 ```bash
-bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/01_install)
+bash <(wget -qO- https://raw.githubusercontent.com/aristosv/webserver/main/01_install)
 ```
 ---
 - The script will install Docker, all the containers, create a new database and download WordPress.
