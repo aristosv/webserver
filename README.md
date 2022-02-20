@@ -38,12 +38,12 @@ URL: http://server_lan_ip:8082
 ## Update
 Run the following command to update your system and all the containers.
 ```bash
-bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/11_install_update)
+bash <(wget -qO- https://raw.githubusercontent.com/aristosv/webserver/main/11_install_update)
 ```
 ---
 ## Add Domains
 Run the following command to add a new domain.
 ```bash
-bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/12_install_domain)
+bash <(wget -qO- https://raw.githubusercontent.com/aristosv/webserver/main/12_install_domain)
 ```
 ---
