@@ -27,13 +27,13 @@ dbpass=$(cat /dev/urandom | tr -dc '[:alnum:]' | head -c 16) ; export dbpass
 dbrootpass=$(cat /dev/urandom | tr -dc '[:alnum:]' | head -c 16) ; export dbrootpass
 
 echo update
-bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/02_install_updates)
+bash <(wget -qO- https://raw.githubusercontent.com/aristosv/webserver/main/02_install_updates)
 
 echo install prerequisites
-bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/03_install_prerequisites)
+bash <(wget -qO- https://raw.githubusercontent.com/aristosv/webserver/main/03_install_prerequisites)
 
 echo install docker
-bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/04_install_docker)
+bash <(wget -qO- https://raw.githubusercontent.com/aristosv/webserver/main/04_install_docker)
 
 echo install portainer
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/05_install_portainer)
@@ -49,7 +49,7 @@ chmod +x /tmp/mariadb
 rm /tmp/mariadb
 
 echo install phpmyadmin
-bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/07_install_phpmyadmin)
+bash <(wget -qO- https://raw.githubusercontent.com/aristosv/webserver/main/07_install_phpmyadmin)
 
 echo install swag
 wget -q https://raw.githubusercontent.com/aristosv/webserver/main/08_install_swag --output-document="/tmp/swag"
@@ -60,7 +60,7 @@ chmod +x /tmp/swag
 rm /tmp/swag
 
 echo install wordpress
-bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/09_install_wordpress)
+bash <(wget -qO- https://raw.githubusercontent.com/aristosv/webserver/main/09_install_wordpress)
 
 echo install complete
-bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/webserver/main/10_install_complete)
+bash <(wget -qO- https://raw.githubusercontent.com/aristosv/webserver/main/10_install_complete)
